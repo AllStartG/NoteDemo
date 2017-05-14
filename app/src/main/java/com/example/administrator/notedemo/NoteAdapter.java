@@ -23,12 +23,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView notetitle,notetype,notetime;
+        TextView notetitle,notetype,notetime,notecontent;
 
 
         public ViewHolder(View view) {
             super(view);
-            notetitle = (TextView) view.findViewById(R.id.title);
+            notetitle = (TextView) view.findViewById(R.id.tv_title);
+            notecontent = (TextView) view.findViewById(R.id.tv_content);
             notetype = (TextView) view.findViewById(R.id.type);
             notetime = (TextView) view.findViewById(R.id.time);
         }
@@ -45,8 +46,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     public void onBindViewHolder(NoteAdapter.ViewHolder holder, int position) {
         Note note = mNoteList.get(position);
         holder.notetitle.setText(note.getTitle());
+        holder.notecontent.setText(note.getContent());
         holder.notetype.setText(note.getType());
-        holder.notetime.setText(note.getCreatetime());
+        holder.notetime.setText(String.valueOf(note.getCreatetime()));
+
     }
 
     @Override

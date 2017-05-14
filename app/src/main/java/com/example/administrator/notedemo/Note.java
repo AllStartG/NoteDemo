@@ -6,18 +6,49 @@ package com.example.administrator.notedemo;
 
 public class Note {
 
-    public Note(){
-
+    public boolean isDel() {
+        return isDel;
     }
 
-    public Note(String title,String content,String createtime,String img,String video,String music,String type) {
-        this.title = title;
-//        this.content = content;
-        this.createtime = createtime;
-//        this.img = img;
-//        this.video = video;
-//        this.music = music;
+    public void setDel(boolean del) {
+        isDel = del;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
+    }
+
+//    public void setCreatetime(String createtime) {
+//        try
+//        {
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd ");
+//            Date date = sdf.parse(createtime);
+//            this.setCreatetime(date);
+//        }
+//        catch (ParseException e)
+//        {
+//
+//        }
+//    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getTitle() {
@@ -28,60 +59,20 @@ public class Note {
         this.title = title;
     }
 
-//    public String getContent() {
-//        return content;
-//    }
-//
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
-
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
-    }
-
-//    public String getVideo() {
-//        return video;
-//    }
-//
-//    public void setVideo(String video) {
-//        this.video = video;
-//    }
-//
-//    public String getImg() {
-//        return img;
-//    }
-//
-//    public void setImg(String img) {
-//        this.img = img;
-//    }
-//
-//    public String getMusic() {
-//        return music;
-//    }
-//
-//    public void setMusic(String music) {
-//        this.music = music;
-//    }
-
     private String title;
-//    private String content;
+    private String content;
     private String createtime;
-//    private String img;
-//    private String video;
-//    private String music;
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     private String type;
+    private boolean isDel;
+
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
